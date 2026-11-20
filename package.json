@@ -1,0 +1,14 @@
+{
+  "name": "playwright-api-ui-tests",
+  "version": "1.0.0",
+  "description": "API & UI test automation with Playwright, JavaScript and GitHub Actions",
+  "scripts": {
+    "test": "playwright test",
+    "test:api": "playwright test --project=api",
+    "test:ui": "playwright test --project=ui",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0"
+  }
+}
