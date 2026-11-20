@@ -39,7 +39,8 @@ test.describe('Cart', () => {
   test('4. cart page lists the added item', async ({ page }) => {
     await addBackpack(page);
     await page.locator('[data-test="shopping-cart-link"]').click();
-    await expect(page.locator('[data-test="inventory-item-name"]')).toHaveText('Sauce Labs Backpack');
+    await expect(page).toHaveURL(/cart\.html/);
+    await expect(page.locator('.cart_item .inventory_item_name')).toHaveText('Sauce Labs Backpack');
   });
 
   test('5. removing an item empties the cart', async ({ page }) => {
@@ -88,3 +89,4 @@ test.describe('Checkout and logout', () => {
     await expect(page.locator('[data-test="login-button"]')).toBeVisible();
   });
 });
+
